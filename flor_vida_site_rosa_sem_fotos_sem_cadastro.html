@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flor & Vida — Floricultura Sustentável</title>
+  <meta name="description" content="Flor & Vida — flores, buquês, potes para plantas e absorventes 100% sustentáveis. Sem cadastro online. Predominância da cor rosa." />
+  <style>
+    :root{
+      --rosa-1:#ffeef6;
+      --rosa-2:#ffc0dd;
+      --rosa-3:#ff8fbf;
+      --rosa-4:#ff4f9a;
+      --texto:#2b1b2f;
+      --branco:#ffffff;
+      --sombra: 0 6px 18px rgba(200,60,120,0.12);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--rosa-1),var(--rosa-2));color:var(--texto);}
+    .container{max-width:1100px;margin:32px auto;padding:24px;background:var(--branco);border-radius:18px;box-shadow:var(--sombra)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--rosa-3),var(--rosa-4));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+    h1{margin:0;font-size:24px}
+    nav a{margin-left:12px;text-decoration:none;color:var(--rosa-4);font-weight:600}
+    main{margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px}
+    .card{border-radius:12px;padding:18px;background:linear-gradient(180deg,var(--rosa-1),#fff);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .product{padding:14px;border-radius:10px;background:linear-gradient(180deg,transparent,rgba(255,200,220,0.22));min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
+    .product h3{margin:0 0 6px 0}
+    .muted{color:#6b5161;font-size:14px}
+    button{background:var(--rosa-4);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700}
+    button.ghost{background:transparent;color:var(--rosa-4);border:2px solid var(--rosa-4)}
+    .cart{position:sticky;top:24px}
+    .cart-list{max-height:320px;overflow:auto;margin-top:12px}
+    footer{margin-top:22px;text-align:center;color:#6b5161;font-size:14px}
+    form input, form textarea, form select{width:100%;padding:10px;border-radius:8px;border:1px solid #f0cfe0;margin-top:8px}
+    .small{font-size:13px;color:#6b5161}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.cart{position:static}}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>FV</div>
+        <div>
+          <h1>Flor & Vida</h1>
+          <div class="small">Flores • Buquês • Potes • Absorventes sustentáveis</div>
+        </div>
+      </div>
+      <nav aria-label="navegação principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card" id="hero">
+        <h2 style="color:var(--rosa-4)">Beleza que respeita o planeta</h2>
+        <p class="muted">Oferecemos flores frescas, buquês preparados com carinho, potes para plantas feitos para durar e absorventes 100% sustentáveis pensados para o conforto feminino e o meio ambiente.</p>
+      </section>
+
+      <div class="grid">
+        <section>
+          <div class="card" id="produtos">
+            <h2 style="color:var(--rosa-4)">Nossos produtos</h2>
+            <p class="small">Não usamos fotos no site. Todas as informações abaixo são textuais — se quiser, podemos anexar imagens mais tarde.</p>
+
+            <h3 style="margin-top:12px">Absorventes 100% sustentáveis</h3>
+            <p class="muted">Absorventes descartáveis compostáveis e / ou absorventes reutilizáveis em tecido orgânico — sem químicos agressivos. Desenvolvidos para conforto e sustentabilidade.</p>
+
+            <div class="products" aria-hidden="false">
+              <article class="product" data-id="a1">
+                <div>
+                  <h3>Kit Absorventes Reutilizáveis (3 un)</h3>
+                  <p class="muted">Tecido orgânico, camadas absorventes e camada impermeável interna. Ideal para o dia a dia.</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+                  <div style="font-weight:800">R$ 69,00</div>
+                  <button onclick="addToCart('Kit Absorventes Reutilizáveis (3 un)',69)">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="product" data-id="a2">
+                <div>
+                  <h3>Absorvente Descartável Compostável (8 un)</h3>
+                  <p class="muted">Feito com fibras vegetais; embalagem biodegradável.</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+                  <div style="font-weight:800">R$ 29,00</div>
+                  <button onclick="addToCart('Absorvente Descartável Compostável (8 un)',29)">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="product" data-id="p1">
+                <div>
+                  <h3>Pote Cerâmico Small</h3>
+                  <p class="muted">Potes para plantas em cerâmica com acabamento artesanal — várias opções de cores (pedimos informar cor desejada no pedido).</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+                  <div style="font-weight:800">R$ 49,00</div>
+                  <button onclick="addToCart('Pote Cerâmico Small',49)">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="product" data-id="p2">
+                <div>
+                  <h3>Pote Autoirrigável Medium</h3>
+                  <p class="muted">Pote prático para quem viaja — mantém a planta hidratada por mais tempo.</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+                  <div style="font-weight:800">R$ 89,00</div>
+                  <button onclick="addToCart('Pote Autoirrigável Medium',89)">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="product" data-id="f1">
+                <div>
+                  <h3>Buquê Pequeno — Rosas e Lisianthus</h3>
+                  <p class="muted">Arranjo delicado pensado para presente. Cor predominante: tons de rosa.</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+                  <div style="font-weight:800">R$ 89,00</div>
+                  <button onclick="addToCart('Buquê Pequeno — Rosas e Lisianthus',89)">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="product" data-id="f2">
+                <div>
+                  <h3>Buquê Assinado — Florista</h3>
+                  <p class="muted">Buquê surpresa montado pelo florista com flores da estação. Ideal para ocasiões especiais.</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+                  <div style="font-weight:800">R$ 139,00</div>
+                  <button onclick="addToCart('Buquê Assinado — Florista',139)">Adicionar</button>
+                </div>
+              </article>
+
+            </div>
+
+            <hr style="margin:18px 0;border:none;border-top:1px solid #ffe0ef"/>
+            <p class="small"><strong>Atenção:</strong> Não há opção de cadastro nem campo de endereço para entrega neste site. Para finalizar seu pedido pedimos apenas nome e e‑mail; combinaremos retirada ou entrega por mensagem/telefone posteriormente.</p>
+          </div>
+
+          <div class="card" id="sobre" style="margin-top:14px">
+            <h2 style="color:var(--rosa-4)">Sobre nós</h2>
+            <p class="muted">Flor & Vida nasceu com a missão de oferecer produtos que conectam bem-estar e sustentabilidade. Nossos absorventes foram pensados para reduzir impacto ambiental; nossos potes valorizam plantas e decoração; nossas flores chegam frescas do arranjo do dia.</p>
+          </div>
+
+          <div class="card" id="contato" style="margin-top:14px">
+            <h2 style="color:var(--rosa-4)">Contato</h2>
+            <p class="small">Preencha o formulário abaixo para solicitar informações ou confirmar um pedido. Reforçamos: não pedimos endereço neste formulário.</p>
+            <form id="contactForm" onsubmit="submitContact(event)">
+              <label>Nome</label>
+              <input type="text" id="cname" required maxlength="80" placeholder="Seu nome" />
+
+              <label>E‑mail</label>
+              <input type="email" id="cemail" required placeholder="seu@exemplo.com" />
+
+              <label>Mensagem (ex.: quero retirar meu pedido na loja / quero entrega — informe telefone para combinarmos)</label>
+              <textarea id="cmsg" rows="4" required placeholder="Escreva sua mensagem aqui"></textarea>
+
+              <div style="display:flex;gap:8px;margin-top:10px">
+                <button type="submit">Enviar mensagem</button>
+                <button type="button" class="ghost" onclick="clearContact()">Limpar</button>
+              </div>
+            </form>
+            <div id="contactResult" style="margin-top:10px;color:var(--rosa-4);font-weight:700"></div>
+          </div>
+        </section>
+
+        <aside class="cart">
+          <div class="card">
+            <h3 style="color:var(--rosa-4)">Seu carrinho</h3>
+            <div class="cart-list" id="cartList">
+              <p class="small">Carrinho vazio</p>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px">
+              <div class="small">Total:</div>
+              <div id="cartTotal" style="font-weight:900">R$ 0,00</div>
+            </div>
+
+            <hr style="margin:12px 0;border:none;border-top:1px solid #ffe0ef"/>
+
+            <div id="checkoutArea">
+              <h4>Finalizar pedido</h4>
+              <p class="small">Pedimos apenas nome e e‑mail — sem cadastro e sem endereço.</p>
+              <label>Nome para o pedido</label>
+              <input type="text" id="orderName" placeholder="Nome" />
+
+              <label>E‑mail</label>
+              <input type="email" id="orderEmail" placeholder="seu@exemplo.com" />
+
+              <label>Observações (opcional)</label>
+              <input type="text" id="orderNote" placeholder="ex.: retirar na loja às 15h" />
+
+              <div style="display:flex;gap:8px;margin-top:10px">
+                <button onclick="checkout()">Enviar pedido</button>
+                <button class="ghost" onclick="clearCart()">Limpar carrinho</button>
+              </div>
+
+              <div id="checkoutResult" style="margin-top:10px;color:var(--rosa-4);font-weight:700"></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h4 style="color:var(--rosa-4)">Política</h4>
+            <p class="small">Sem cadastro no site. Pedidos confirmados por e‑mail ou telefone. Retirada na loja ou combinação de entrega feita diretamente com a equipe (fora do formulário online).</p>
+          </div>
+        </aside>
+      </div>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Flor & Vida — Todos os direitos reservados • Predominância da cor rosa no design
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const cart = [];
+    function formatBRL(v){return 'R$ ' + v.toFixed(2).replace('.',',');}
+
+    function addToCart(name,price){
+      cart.push({name,price});
+      renderCart();
+    }
+    function renderCart(){
+      const list = document.getElementById('cartList');
+      list.innerHTML = '';
+      if(cart.length===0){list.innerHTML='<p class="small">Carrinho vazio</p>';document.getElementById('cartTotal').textContent = formatBRL(0);return}
+      cart.forEach((item,i)=>{
+        const div = document.createElement('div');
+        div.style.display='flex';div.style.justifyContent='space-between';div.style.alignItems='center';div.style.marginBottom='8px';
+        div.innerHTML = `<div style="max-width:70%"><strong>${item.name}</strong><div class='small'>${formatBRL(item.price)}</div></div><div><button onclick="removeItem(${i})" class='ghost'>Remover</button></div>`;
+        list.appendChild(div);
+      });
+      const total = cart.reduce((s,a)=>s+a.price,0);
+      document.getElementById('cartTotal').textContent = formatBRL(total);
+    }
+    function removeItem(index){cart.splice(index,1);renderCart();}
+
+    function clearCart(){if(confirm('Limpar carrinho?')){cart.length=0;renderCart();document.getElementById('checkoutResult').textContent='';}}
+
+    function checkout(){
+      const name = document.getElementById('orderName').value.trim();
+      const email = document.getElementById('orderEmail').value.trim();
+      if(cart.length===0){alert('Seu carrinho está vazio.');return}
+      if(!name||!email){alert('Por favor informe nome e e‑mail para finalizar.');return}
+      const order = {name,email,items:cart.slice(),note:document.getElementById('orderNote').value.trim(),total:cart.reduce((s,a)=>s+a.price,0)};
+      // Aqui, em produção, você enviaria por API ou e‑mail. Neste modelo guardamos localmente e mostramos resumo.
+      document.getElementById('checkoutResult').textContent = 'Pedido enviado! Verifique seu e‑mail para instruções.';
+      // Simulate sending by logging to console (developer can replace this with real backend integration).
+      console.log('PEDIDO (modelo, sem envio real):',order);
+      // Limpa carrinho localmente
+      cart.length=0;renderCart();
+    }
+
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('cname').value.trim();
+      const email = document.getElementById('cemail').value.trim();
+      const msg = document.getElementById('cmsg').value.trim();
+      if(!name||!email||!msg){alert('Preencha todos os campos.');return}
+      document.getElementById('contactResult').textContent = 'Mensagem enviada! Responderemos por e‑mail.';
+      console.log('CONTATO (modelo):', {name,email,msg});
+      document.getElementById('contactForm').reset();
+    }
+    function clearContact(){document.getElementById('contactForm').reset();document.getElementById('contactResult').textContent='';}
+
+    // Inicializa
+    renderCart();
+  </script>
+</body>
+</html>
